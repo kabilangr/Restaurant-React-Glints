@@ -1,7 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Pacifico&display=swap');
 nav {
     display: flex;
     justify-content: space-between;
-    background-color: grey;
+    background-color: rgba(188, 188, 197, 0.521);
 }
 .nav-links-list {
     display: flex;
@@ -11,10 +12,28 @@ nav {
 .nav-links-list li {
     list-style: none;
     padding: 5px;
-    background-color: lightblue;
+    background-color: rgba(169, 169, 172, 0.75);
     border-radius: 0.4em;
 }
+/* 003049   d62828   f77f00   fcbf49   eae2b7 */
 .nav-link {
-    color: darkred;
+    color: black;
+    font-weight: 500;
     text-decoration: none;
+}
+nav h3 {
+    padding: 0;
+    margin: 0;
+    padding-left: 20px;
+    padding-top: 5px;
+    font-size:30px;
+    font-family: 'Pacifico', cursive;
+}
+
+.logout-btn {
+    cursor: pointer;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+    font-weight: 600;
 }

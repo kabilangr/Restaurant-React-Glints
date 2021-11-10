@@ -1,9 +1,12 @@
 import './App.css';
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 
-import Navigation from './Components/Navigation';
+// import Navigation from './Components/Navigation';
+import { ProtectedRoute } from './utils/protectedRoute';
 
+import Login from "./Components/Login";
+import Signup from "./Components/Signup";
 import Home from "./Components/Home";
 import Collection from './Components/Collections';
 
@@ -11,13 +14,20 @@ function App() {
   return (
     // <Router>
       <div className="App">
-        <Navigation />
+        {/* <Navigation /> */}
         {/* <Home/> */}
-        <Routes>
-          <Route path="/" exact element={<Home/>} />
-          <Route path="/home" exact element={<Home/>} />
-          <Route path="/collection" exact element={<Collection/>} />
-        </Routes>
+        {/* <Routes> */}
+        <Switch>
+          <Route path="/" exact name="login" component={Login} />
+          <Route path="/login" name="login" exact component={Login} />
+          <Route path="/signup" exact name="signup" component={Signup} />
+          <div className="other">
+            <ProtectedRoute path="/home" exact component={Home} />
+            <ProtectedRoute path="/collection" exact component={Collection} />
+            <Route path="*" component={() => "404 NOT FOUND" } />
+          </div>
+        </Switch>
+        {/* </Routes> */}
       </div>
     // </Router>
   );

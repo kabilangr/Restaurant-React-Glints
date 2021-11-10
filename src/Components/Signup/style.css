@@ -1,0 +1,97 @@
+.login-page {
+    height: 100vh;
+    background-image: url("../../assets/image/foodBg.jpg");
+    background-size: 100%;
+}
+.form-container {
+    height: 300px;
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.5em;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    background-color: rgba(223, 223, 223, 0.658);
+}
+
+.form-container label {
+    font-weight: 600;
+}
+
+.form-container label input {
+    border: none;
+    border-radius: 0.3em;
+    height: 22.5px;
+    outline: none;
+}
+
+.form-container button {
+    cursor: pointer;
+    border: none;
+    padding: 7.5px;
+    border-radius: 0.5em;
+    font-weight: 600;
+}
+
+.form-container button :hover {
+    background-color: aqua;
+}
+
+.login-container {
+    display: flex;
+    flex-direction: row-reverse;
+    padding: 100px;
+    /* margin-right: 50px; */
+    /* margin-top: 100px; */
+    /* margin-bottom: 100px; */
+}
+
+.title-login {
+    position: absolute;
+    color: white;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.747);
+    padding: 0 7.5px 2px 7.5px;
+    border-radius: 0.25em;
+    font-family: 'Pacifico', cursive;
+}
+
+.signin-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.signup-btn1 {
+    background-color: rgba(223, 223, 223, 0.664);
+    font-weight: 600;
+    padding: 0 10px;
+    padding-top: 0;
+    /* text-decoration: none; */
+    /* padding-bottom: 7.5px; */
+    width: 330px;
+    text-align: center;
+    border-radius: 0.35em;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+    align-self: center;
+    cursor: pointer;
+    color: black;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+}
+
+@media only screen and (min-width: 550px) and (max-width: 1080px) {
+    .login-page {
+        background-image: url("../../assets/image/imagesFood");
+    }
+}
+
+@media only screen and (min-width: 285px) and (max-width: 550px) {
+    .login-page {
+        background-image: url("../../assets/image/imagesFood");
+    }
+}

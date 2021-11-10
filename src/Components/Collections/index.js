@@ -1,9 +1,10 @@
 import React from "react";
+import Navigation from "../Navigation"
 
-
-const Collection = () => {
+const Collection = (props) => {
     return(
         <div>
+            <Navigation {...props} />
             <h2>Collection</h2>
         </div>
     )
