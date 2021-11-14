@@ -6,7 +6,7 @@ import Navigation from '../Navigation';
 
 const Home = (props) => {
 
-    const [restaurant,setRestaurant] = useState()
+    const [restaurant,setRestaurant] = useState([])
     const [searchName, setSearchName] = useState("")
     const [day, setDay] = useState("All")  
     const [time, setTime] = useState(null)  
@@ -18,17 +18,13 @@ const Home = (props) => {
     const fetchAll = () => {
         setIsLoading(true)
         setRestaurant([])
-        console.log(searchName,time,day)
-        const url = (searchName|| time || day !== "All")? 
+        const url = 
             `https://thawing-ravine-84836.herokuapp.com/restaurant/search?search=${searchName}&day=${day ? day: "All"}&time=${time?time : null}`
-            : `https://thawing-ravine-84836.herokuapp.com/restaurant`
-            console.log(url)
         fetch(url)
             .then((res) => res.json())
             .then((response) => {
                 setRestaurant(response)
                 setIsLoading(false)
-                console.log(response)
             })
             .catch((error) => {
                 console.log(error)

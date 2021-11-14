@@ -39,11 +39,6 @@ export const PopupView = (props) => {
 
     const addList = (collectionId) => {
         const url = `http://localhost:3000/list/add`
-        console.log(url,collectionId,JSON.stringify({
-            id: collectionId,
-            restaurant: props.restaurant,
-            timing: props.timeslot
-        }))
         fetch(url, {
             method: "POST",
             headers: {"Content-Type": "application/json"},
@@ -55,7 +50,6 @@ export const PopupView = (props) => {
         })
             .then((res) => res.json())
             .then(response => {
-                console.log(response)
                 if(response.code === 200)
                     alert("added succceddful")
                 else if(response.code === 406)
@@ -86,9 +80,7 @@ export const PopupView = (props) => {
                         list: value,
                     })
                 }
-                console.log(data)
                 setCollection(data)
-                console.log(data[0].list[0].listId)
                 setIsLoading(false)
             })
             .catch((error) => {
