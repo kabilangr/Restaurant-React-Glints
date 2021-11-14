@@ -11,6 +11,16 @@
     min-height: 100vh;
 }
 
+.input-container {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.input {
+    margin-left: 15px;
+}
+
 .card-container {
     display: flex;
     flex-wrap: wrap;
@@ -61,10 +71,21 @@
     animation: spin 2s linear infinite;
 }
 
+.input-forCollection {
+    background-color: white;
+    height: 100px;
+    width: 250px;
+    display: flex;
+    z-index: 1;
+    align-items: center;
+    justify-content: center;
+}
+
 .card-btn {
     width: 225px;
     display: flex;
     justify-content: flex-end;
+    padding-right: 10px;
 }
 
 .card-body {
@@ -80,7 +101,7 @@
     /* padding: 4px; */
     background-color: rgb(222, 222, 222);
     font-size: larger;
-    padding: 0 5px;
+    padding: 0 0px;
     padding-bottom: 2px;
     border-radius: 0.2em;
     margin-right: 15px;
@@ -88,6 +109,18 @@
     -webkit-user-select: none; /* Safari */
     -ms-user-select: none; /* IE 10 and IE 11 */
     user-select: none; /* Standard syntax */
+}
+
+.collection-show-list {
+    background-color: white;
+    min-width: 100px;
+    min-height: 100px;
+}
+
+.collection-btn {
+    cursor: pointer;
+    font-size: medium;
+    font-weight: 600;
 }
 
 .card-title {
@@ -100,6 +133,11 @@
     padding: 5px;
     background-color: rgba(222, 222, 222, 0.452);
     border-radius: 0.75em;
+}
+
+.days-text {
+    padding: 0;
+    margin: 0;
 }
 
 /* Safari */

@@ -26,9 +26,13 @@ const Login = (props) => {
                 if(response.code === 200) {
                     auth.login(() => {
                         const myStorage = window.sessionStorage;
-                        myStorage.setItem("username",response.userName)
-                        myStorage.setItem("userId",response.id)
-                        myStorage.setItem("LoggedIn",response.successfull)
+                        myStorage.setItem("usernameResta",response.userName)
+                        myStorage.setItem("userIdResta",response.id)
+                        myStorage.setItem("LoggedInResta",response.successfull)
+                        const l1 = myStorage.getItem("usernameResta")
+                        const l2 =myStorage.getItem("userIdResta")
+                        const l3 =myStorage.getItem("LoggedInResta")
+                        console.log(l1,l2,l3)
                         props.history.push("/home")
                     })
                 }
