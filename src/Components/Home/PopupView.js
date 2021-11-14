@@ -38,7 +38,7 @@ export const PopupView = (props) => {
     }
 
     const addList = (collectionId) => {
-        const url = `http://localhost:3000/list/add`
+        const url = `https://thawing-ravine-84836.herokuapp.com/list/add`
         fetch(url, {
             method: "POST",
             headers: {"Content-Type": "application/json"},
