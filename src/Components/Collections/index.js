@@ -72,7 +72,7 @@ const Collection = (props) => {
     const AddText = () => {
         return (
             <Popup
-                trigger={<button className="button"> Open Modal </button>}
+                trigger={<button style={{fontSize:20}}>+</button>}
                 modal
                 nested>
                 {close => (
