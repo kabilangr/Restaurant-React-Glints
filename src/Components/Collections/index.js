@@ -108,10 +108,11 @@ const AddText = (props) => {
             <div className="input-forCollection-in">
                 <div className="input-forCollection">
                     <input value={collectionAdd}
+                    className="input-new-collection"
                     onChange={(e) => setCollectionAdd(e.target.value)} 
                     placeholder="name"
                     />
-                    <input type="submit" value="submit" onClick={createCollection} />
+                    <input type="submit" className="submitBtnCollection" value="Submit" onClick={createCollection} />
                 </div>
             </div>
     )

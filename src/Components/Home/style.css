@@ -91,6 +91,7 @@
     border-radius: 0.25em;
     background-color: white;
     color: black;
+    transition: 0.5s;
 }
 
 #searchBar {
@@ -108,14 +109,17 @@
     border-radius: 0.25em;
     background-color: rgba(226, 226, 226, 0.603);
     border: none;
+    transition: 0.5s;
 }
 
 #searchBtn:hover {
+    transition: 0.5s;
     color: rgba(223, 222, 222, 0.925);
     background-color: rgba(187, 187, 187, 0.603);
 }
 
 .add-item-list:hover {
+    transition: 0.5s;
     background-color: rgba(59, 59, 59, 0.76);
     color: rgba(255, 255, 255, 0.897);
 }
@@ -185,9 +189,35 @@
     color: rgba(216, 216, 216, 0.945);
     border: 0;
     border-radius: 0.5em;
+    transition: 0.5s;
+
 }
 .addCollectionBtn:hover {
+    transition: 0.5s;
     background-color: rgba(228, 228, 228, 0.849);
+    color: black;
+}
+
+.add-listname {
+    border: none;
+    outline: none;
+    padding-left: 5px;
+    height: 25px;
+    border-radius: 0.25em;
+    margin-right: 15px;
+}
+
+.addNewCollectionBtn {
+    border: none;
+    padding: 5px;
+    font-weight: 600;
+    border-radius: 0.25em;
+    background-color: rgba(87, 87, 87, 0.884);
+    color: rgb(230, 230, 230);
+}
+
+.addNewCollectionBtn:hover {
+    background-color: rgb(255, 255, 255);
     color: black;
 }
 

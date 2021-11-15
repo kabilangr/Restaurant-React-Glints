@@ -1,5 +1,6 @@
 import React from 'react';
 import Modal  from 'react-modal';
+import "./customModal.css";
 
 Modal.setAppElement(document.body);
 // common modal layout with basic styles for embedding in other specific modals
@@ -33,7 +34,7 @@ function CustomModal({styles , ...props}){
             onRequestClose={props.closeModal}
             shouldCloseOnEsc={false}>
                 <>
-                <button className = "closeModalBtn" onClick = {props.closeModal}>x</button>
+                <button className = "closeModalBtn" onClick = {props.closeModal}>X</button>
                 {props.children}
                 </>
         </Modal>

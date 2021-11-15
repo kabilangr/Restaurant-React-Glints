@@ -26,6 +26,7 @@
 }
 
 .open-popup {
+    transition: 0.5s;
     background-color: rgb(255, 255, 255);
     border: none;
     font-size: large;
@@ -36,14 +37,40 @@
 }
 
 .open-popup:hover {
+    transition: 0.5s;
     background-color: rgba(188, 188, 197, 0.521);
     color: rgb(219, 219, 219);
+}
+
+.input-new-collection {
+    border: none;
+    outline: none;
+    height: 22.5px;
+    padding-left: 5px;
+    border-radius: 0.25em;
+    margin-right: 15px;
+    /* font-size: medium; */
+}
+
+.submitBtnCollection {
+    /* font-size: medium; */
+    font-weight: 600;
+    border: none;
+    padding: 5px;
+    border-radius: 0.25em;
+    background-color: rgba(87, 87, 87, 0.884);
+    color: rgb(230, 230, 230);
+}
+
+.submitBtnCollection:hover {
+    background-color: rgb(255, 255, 255);
+    color: black;
 }
 
 .input-forCollection {
     background-color: rgba(226, 226, 226, 0.603);
     height: 100px;
-    width: 250px;
+    width: 400px;
     display: flex;
     /* z-index: 1; */
     align-items: center;

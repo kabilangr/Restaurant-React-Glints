@@ -1,0 +1,17 @@
+.closeModalBtn {
+    border: none;
+    font-weight: 600;
+    font-size: larger;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 0.25em;
+    background-color: whitesmoke;
+    color: black;
+    transition: 0.5s;
+}
+
+.closeModalBtn:hover {
+    transition: 0.5s;
+    background-color: rgba(56, 56, 56, 0.842);
+    color: rgb(238, 238, 238);
+}
