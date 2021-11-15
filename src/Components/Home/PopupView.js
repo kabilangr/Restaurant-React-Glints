@@ -85,7 +85,9 @@ export const PopupView = (props) => {
             }
             <button className = "addCollectionBtn" onClick = {() =>setShowmodal(!showModal)}>+ ADD</button>
             {showModal && <CustomModal styles={{background:"grey"}} closeModal={() =>setShowmodal(false)} >
-                <AddText  />
+                <AddText 
+                    fetchCollection={fetchCollection} 
+                    setShowmodal={setShowmodal} />
             </CustomModal>}
             </div>
         </div>
@@ -95,11 +97,11 @@ export const PopupView = (props) => {
 const AddText = (props) => {
     const [collectionAdd, setCollectionAdd] = useState("")
         
+    const myStorage = window.sessionStorage
+    const id = myStorage.getItem("userIdResta")
 
 
     const createCollection = (title) => {
-        const myStorage = window.sessionStorage
-        const id = myStorage.getItem("userIdResta")
         const url = "https://thawing-ravine-84836.herokuapp.com/collection/create"
         fetch(url, {
             method: "POST",
@@ -111,10 +113,13 @@ const AddText = (props) => {
         })
             .then((res) => res.json())
             .then(response => {
-                if(response.code === 200)
+                if(response.code === 200) {
                     alert("added succceddful")
+                    props.setShowmodal(false)
+                }
                 if(response.code === 406)
                     alert(response.message)
+                props.fetchCollection(id)
             })
             .catch(err => {
                 alert(err)
