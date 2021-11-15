@@ -32,7 +32,6 @@ const Login = (props) => {
                         const l1 = myStorage.getItem("usernameResta")
                         const l2 =myStorage.getItem("userIdResta")
                         const l3 =myStorage.getItem("LoggedInResta")
-                        console.log(l1,l2,l3)
                         props.history.push("/home")
                     })
                 }

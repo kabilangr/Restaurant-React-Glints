@@ -15,6 +15,11 @@ nav {
     background-color: rgba(169, 169, 172, 0.75);
     border-radius: 0.4em;
 }
+
+.nav-links-list li:hover  {
+    background-color: rgb(199, 199, 199);
+}
+
 /* 003049   d62828   f77f00   fcbf49   eae2b7 */
 .nav-link {
     color: black;
@@ -28,6 +33,9 @@ nav h3 {
     padding-top: 5px;
     font-size:30px;
     font-family: 'Pacifico', cursive;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
 }
 
 .logout-btn {

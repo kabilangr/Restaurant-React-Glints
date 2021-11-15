@@ -18,6 +18,38 @@
     padding: 10px;
 }
 
+.input-forCollection-in {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.open-popup {
+    background-color: rgb(255, 255, 255);
+    border: none;
+    font-size: large;
+    font-weight: 600;
+    border-radius: 0.25em;
+    padding-top: 2px;
+    margin-bottom: 10px;
+}
+
+.open-popup:hover {
+    background-color: rgba(188, 188, 197, 0.521);
+    color: rgb(219, 219, 219);
+}
+
+.input-forCollection {
+    background-color: rgba(226, 226, 226, 0.603);
+    height: 100px;
+    width: 250px;
+    display: flex;
+    /* z-index: 1; */
+    align-items: center;
+    justify-content: center;
+}
+
 .collection-container {
     width: 50vw;
     margin-top: 8vh;

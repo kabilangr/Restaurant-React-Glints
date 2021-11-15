@@ -3,6 +3,7 @@ import "./style.css";
 
 import { PopupView } from "./PopupView";
 import Navigation from '../Navigation';
+import CustomModal from "../../utils/CustomModal";
 
 const Home = (props) => {
 
@@ -32,44 +33,12 @@ const Home = (props) => {
             })
     }
 
-    const name = (name) => {
-        if(name && name.length>22)
-        name = name.substring(0,19) + "..."
-        return name
-    }
 
 
 
-    const Card = (props) => {
-        return(
-            <div className="card-details">
-                <div className="card-div">
-                    <h3 className="card-title">{name(props.name)}</h3>
-                    <div className="card-body">
-                        <div className="card-text">
-                            {props.timeline.Monday&&<p className="days-text">Monday: {props.timeline.Monday}</p>}
-                            {props.timeline.Tuesday&&<p className="days-text">Tuesday: {props.timeline.Tuesday}</p>}
-                            {props.timeline.Wednesday&&<p className="days-text">Wednesday: {props.timeline.Wednesday}</p>}
-                            {props.timeline.Thursday&&<p className="days-text">Thursday: {props.timeline.Thursday}</p>}
-                            {props.timeline.Friday&&<p className="days-text">Friday: {props.timeline.Friday}</p>}
-                            {props.timeline.Saturday&&<p className="days-text">Saturday: {props.timeline.Saturday}</p>}
-                            {props.timeline.Sunday&&<p className="days-text">Sunday: {props.timeline.Sunday}</p>}
-                            </div>
-                    </div>
-                </div>
-                <div className="card-btn">
-                <PopupView restaurant={props.name} timeslot={props.timeline.timeline.join("/")}/>
-                    {/* <a href onClick={() => {
-                        console.log(props.timeline.timeline.join("/"))
-                        console.log("yellow")
-                    }}>+</a> */}
-                </div>
-            </div>
-        )
-    }
+
 
     const handleSearch = () => {
-        console.log(searchName,day,time)
         fetchAll()
     }
 
@@ -77,7 +46,7 @@ const Home = (props) => {
         <div className="Home">
             <Navigation {...props} />
             <div className="input-container">
-                <input type="text" className="input" placeholder="search..." value={searchName} 
+                <input type="text" className="input" id="searchBar" placeholder="search..." value={searchName} 
                     onChange={(e) =>{
                         setSearchName(e.target.value)
                         // e.preventDefault()
@@ -93,13 +62,50 @@ const Home = (props) => {
                     <option value="Sun">Sunday</option>
                 </select>
                 <input type="time" className="input" id="appt" onChange={(e) => setTime(e.target.value)} name="appt" />
-                <input type="button" className="input" value="Search" onClick={handleSearch} />
+                <input type="button" className="input" id="searchBtn" value="Search" onClick={handleSearch} />
             </div>
             <div className="home-body">
                 {isLoading && <div className="loader"></div>}
                 <div className="card-container">
                     {restaurant && restaurant.map((data,index) => <Card key={index} {...data}/> )}
                 </div>
+            </div>
+        </div>
+    )
+}
+
+
+const Card = (props) => {
+
+    const [showModel, setShowmodel] =useState(false)
+    const name = (name) => {
+        if(name && name.length>22)
+        name = name.substring(0,19) + "..."
+        return name
+    }
+    return(
+        <div className="card-details">
+            <div className="card-div">
+                <h3 className="card-title">{name(props.name)}</h3>
+                <div className="card-body">
+                    <div className="card-text">
+                        {props.timeline.Monday&&<p className="days-text">Monday: {props.timeline.Monday}</p>}
+                        {props.timeline.Tuesday&&<p className="days-text">Tuesday: {props.timeline.Tuesday}</p>}
+                        {props.timeline.Wednesday&&<p className="days-text">Wednesday: {props.timeline.Wednesday}</p>}
+                        {props.timeline.Thursday&&<p className="days-text">Thursday: {props.timeline.Thursday}</p>}
+                        {props.timeline.Friday&&<p className="days-text">Friday: {props.timeline.Friday}</p>}
+                        {props.timeline.Saturday&&<p className="days-text">Saturday: {props.timeline.Saturday}</p>}
+                        {props.timeline.Sunday&&<p className="days-text">Sunday: {props.timeline.Sunday}</p>}
+                        </div>
+                </div>
+            </div>
+            <div className="card-btn">
+            <button className = "add-item-list" onClick = {() =>setShowmodel(!showModel)}>+</button>
+            {showModel&&<CustomModal styles={{background:"grey"}} closeModal={() =>setShowmodel(false)} >
+                <div >
+                    <PopupView restaurant={props.name} timeslot={props.timeline.timeline.join("/")}/>
+                </div>
+            </CustomModal>}
             </div>
         </div>
     )
